@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+  {% include meta.html %}
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/gh/aFarkas/html5shiv@master/src/html5shiv.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/images/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
+  <script src="{{ site.baseurl }}/assets/js/darkmode.js"></script>
+  {% include adsense.html %}
+</head>
+
+<body>
+  <div class="wrapper-masthead">
+    <div class="container">
+      <header class="masthead clearfix">
+        <a href="{{ site.baseurl }}/" class="site-avatar"><img alt="logo" src="{{ site.avatar }}" /></a>
+
+        <div class="site-info">
+          <h2 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h2>
+          <p class="site-description">{{ site.description }}</p>
+        </div>
+
+        <nav>
+          <a href="{{ site.baseurl }}/">Home</a>
+          <a href="{{ site.baseurl }}/read">Read</a>
+          <a href="{{ site.baseurl }}/donate">Donate</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div id="main" role="main" class="container">
+    {{ content }}
+  </div>
+
+  <div class="wrapper-footer">
+    <div class="container">
+      <footer style="isolation: isolate" class="footer">
+        {% include svg-icons.html %}
+      </footer>
+    </div>
+  </div>
+
+  {% include google-analytics.html %}
+  {% include microsoft-clarity.html %}
+  {% include checkip.html %}
+  {% include danhgiagopy.html %}
+  {% include copyright.html %}
+  {% include back2top.html %}
+</body>
+
+</html>
